@@ -66,6 +66,7 @@ public class MarsRoverTest {
     public void shouldMoveAndChangeDirectionOfMarsRoverWhenInstructionIsGiven() {
         Point initial = new Point(3, 3);
         MarsRover marsRover2 = new MarsRover(initial, Compass.E, plateau);
+
         marsRover2.doInstruction("MMRMMRMRRM");
 
         assertEquals("5 1 E", marsRover2.getPosition());

@@ -17,10 +17,10 @@ public class MarsRover {
         for (Character character : message.toCharArray()) {
             switch (character) {
                 case 'L':
-                    compass = Direction.rotateLeft(compass);
+                    compass = CompassGenerator.rotateLeft(compass);
                     break;
                 case 'R':
-                    compass = Direction.rotateRight(compass);
+                    compass = CompassGenerator.rotateRight(compass);
                     break;
                 case 'M': {
                     Point temp = increaseCoordinate();
