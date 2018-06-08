@@ -23,4 +23,8 @@ public class Point {
     public Point decreaseX() {
         return new Point(xPoint-1,yPoint);
     }
+
+    public Point decreaseY() {
+        return new Point(xPoint,yPoint-1);
+    }
 }

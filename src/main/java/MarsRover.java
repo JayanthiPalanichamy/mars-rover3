@@ -25,6 +25,7 @@ public class MarsRover {
             case N: coordinate = coordinate.increaseY(); break;
             case E: coordinate = coordinate.increaseX(); break;
             case W: coordinate = coordinate.decreaseX(); break;
+            case S: coordinate = coordinate.decreaseY(); break;
 
         }
     }
