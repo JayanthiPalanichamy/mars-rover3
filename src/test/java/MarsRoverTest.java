@@ -34,9 +34,16 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void shouldIncreasePositionInYPointWhenMoveInstructionIsGiven() {
+    public void shouldIncreasePositionInYPointWhenMovedInNorth() {
         marsRover.doInstruction("M");
 
         assertEquals("1 3 N",marsRover.getPosition());
+    }
+
+    @Test
+    public void shouldIncreasePositionInXPointWhenMovedInEast() {
+        marsRover.doInstruction("RM");
+
+        assertEquals("2 2 E",marsRover.getPosition());
     }
 }

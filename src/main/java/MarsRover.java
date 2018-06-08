@@ -22,7 +22,9 @@ public class MarsRover {
 
     private void increaseCoordinate() {
         switch (compass){
-            case N: coordinate = coordinate.increaseY();
+            case N: coordinate = coordinate.increaseY(); break;
+            case E: coordinate = coordinate.increaseX(); break;
+
         }
     }
 
