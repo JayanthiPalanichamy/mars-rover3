@@ -15,8 +15,11 @@ public class MarsRover {
 
     public void doInstruction(String message) {
         for (Character character:message.toCharArray()) {
-            if(character == 'L' || character =='R') compass = Direction.change(compass,character);
-            else if(character=='M') increaseCoordinate();
+            switch(character){
+                case 'L' : compass=Direction.rotateLeft(compass); break;
+                case 'R' : compass=Direction.rotateRight(compass); break;
+                case 'M' : increaseCoordinate(); break;
+            }
         }
     }
 
