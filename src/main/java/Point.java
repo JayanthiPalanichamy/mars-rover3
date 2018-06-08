@@ -9,22 +9,30 @@ public class Point {
 
     @Override
     public String toString() {
-        return  xPoint + " " + yPoint;
+        return xPoint + " " + yPoint;
     }
 
     public Point increaseY() {
-        return new Point(xPoint,yPoint+1);
+        return new Point(xPoint, yPoint + 1);
     }
 
     public Point increaseX() {
-        return new Point(xPoint+1,yPoint);
+        return new Point(xPoint + 1, yPoint);
     }
 
     public Point decreaseX() {
-        return new Point(xPoint-1,yPoint);
+        return new Point(xPoint - 1, yPoint);
     }
 
     public Point decreaseY() {
-        return new Point(xPoint,yPoint-1);
+        return new Point(xPoint, yPoint - 1);
+    }
+
+    public boolean isGreater(Point temp) {
+        return xPoint >= temp.xPoint && yPoint >= temp.yPoint;
+    }
+
+    public boolean isLesser(Point temp) {
+        return xPoint <= temp.xPoint && yPoint <= temp.yPoint;
     }
 }

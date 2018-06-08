@@ -1,6 +1,6 @@
 public class MarsRover {
-    private  Point coordinate;
-    private  Compass compass;
+    private Point coordinate;
+    private Compass compass;
     private final Point plateau;
 
     public MarsRover(Point coordinate, Compass compass, Point plateau) {
@@ -10,26 +10,45 @@ public class MarsRover {
     }
 
     public String getPosition() {
-        return  coordinate.toString()+" "+compass;
+        return coordinate.toString() + " " + compass;
     }
 
     public void doInstruction(String message) {
-        for (Character character:message.toCharArray()) {
-            switch(character){
-                case 'L' : compass=Direction.rotateLeft(compass); break;
-                case 'R' : compass=Direction.rotateRight(compass); break;
-                case 'M' : increaseCoordinate(); break;
+        for (Character character : message.toCharArray()) {
+            switch (character) {
+                case 'L':
+                    compass = Direction.rotateLeft(compass);
+                    break;
+                case 'R':
+                    compass = Direction.rotateRight(compass);
+                    break;
+                case 'M': {
+                    Point temp = increaseCoordinate();
+                    if (isWithinPlateau(temp)) {
+                        coordinate = temp;
+                        break;
+                    } else throw new MovedOutOfPlateau();
+                }
             }
         }
     }
 
-    private void increaseCoordinate() {
-        switch (compass){
-            case N: coordinate = coordinate.increaseY(); break;
-            case E: coordinate = coordinate.increaseX(); break;
-            case W: coordinate = coordinate.decreaseX(); break;
-            case S: coordinate = coordinate.decreaseY(); break;
+    private boolean isWithinPlateau(Point temp) {
+        return plateau.isGreater(temp) && new Point(0, 0).isLesser(temp);
+    }
+
+    private Point increaseCoordinate() {
+        switch (compass) {
+            case N:
+                return coordinate.increaseY();
+            case E:
+                return coordinate.increaseX();
+            case W:
+                return coordinate.decreaseX();
+            case S:
+                return coordinate.decreaseY();
         }
+        return coordinate;
     }
 
 
