@@ -19,4 +19,8 @@ public class Point {
     public Point increaseX() {
         return new Point(xPoint+1,yPoint);
     }
+
+    public Point decreaseX() {
+        return new Point(xPoint-1,yPoint);
+    }
 }

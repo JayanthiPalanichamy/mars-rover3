@@ -24,6 +24,7 @@ public class MarsRover {
         switch (compass){
             case N: coordinate = coordinate.increaseY(); break;
             case E: coordinate = coordinate.increaseX(); break;
+            case W: coordinate = coordinate.decreaseX(); break;
 
         }
     }

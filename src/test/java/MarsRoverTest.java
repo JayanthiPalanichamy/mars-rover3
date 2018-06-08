@@ -46,4 +46,12 @@ public class MarsRoverTest {
 
         assertEquals("2 2 E",marsRover.getPosition());
     }
+
+    @Test
+    public void shouldDecreasePositionInXPointWhenMovedInWest() {
+        marsRover.doInstruction("LM");
+
+        assertEquals("0 2 W",marsRover.getPosition());
+    }
+
 }
