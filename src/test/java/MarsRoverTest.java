@@ -21,42 +21,42 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void shouldChangeDirectionInLeftWhenInstructionIsGiven() {
+    public void shouldChangeCompassInLeftWhenLeftInstructionIsGiven() {
         marsRover.doInstruction("L");
 
         assertEquals("1 2 W", marsRover.getPosition());
     }
 
     @Test
-    public void shouldChangeDirectionInRightWhenInstructionIsGiven() {
+    public void shouldChangeCompassInRightWhenRightInstructionIsGiven() {
         marsRover.doInstruction("R");
 
         assertEquals("1 2 E", marsRover.getPosition());
     }
 
     @Test
-    public void shouldIncreasePositionInYPointWhenMovedInNorth() {
+    public void shouldIncreaseYCoordinatePointWhenMovedInNorth() {
         marsRover.doInstruction("M");
 
         assertEquals("1 3 N", marsRover.getPosition());
     }
 
     @Test
-    public void shouldIncreasePositionInXPointWhenMovedInEast() {
+    public void shouldIncreaseXCoordinateWhenMovedInEast() {
         marsRover.doInstruction("RM");
 
         assertEquals("2 2 E", marsRover.getPosition());
     }
 
     @Test
-    public void shouldDecreasePositionInXPointWhenMovedInWest() {
+    public void shouldDecreaseXCoordinateWhenMovedInWest() {
         marsRover.doInstruction("LM");
 
         assertEquals("0 2 W", marsRover.getPosition());
     }
 
     @Test
-    public void shouldDecreasePositionInYPointWhenMovedInSouth() {
+    public void shouldDecreaseYCoordinateWhenMovedInSouth() {
         marsRover.doInstruction("LLM");
 
         assertEquals("1 1 S", marsRover.getPosition());
