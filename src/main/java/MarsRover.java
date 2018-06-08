@@ -13,9 +13,18 @@ public class MarsRover {
         return  coordinate.toString()+" "+compass;
     }
 
-    public void instruction(String message) {
+    public void doInstruction(String message) {
         for (Character character:message.toCharArray()) {
             if(character == 'L' || character =='R') compass = Direction.change(compass,character);
+            else if(character=='M') increaseCoordinate();
         }
     }
+
+    private void increaseCoordinate() {
+        switch (compass){
+            case N: coordinate = coordinate.increaseY();
+        }
+    }
+
+
 }

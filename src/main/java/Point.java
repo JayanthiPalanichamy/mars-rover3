@@ -11,4 +11,8 @@ public class Point {
     public String toString() {
         return  xPoint + " " + yPoint;
     }
+
+    public Point increaseY() {
+        return new Point(xPoint,yPoint+1);
+    }
 }

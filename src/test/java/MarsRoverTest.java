@@ -20,9 +20,23 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void shouldChangeDirectionWhenInstructionIsGiven() {
-        marsRover.instruction("LLR");
+    public void shouldChangeDirectionInLeftWhenInstructionIsGiven() {
+        marsRover.doInstruction("L");
 
         assertEquals("1 2 W",marsRover.getPosition());
+    }
+
+    @Test
+    public void shouldChangeDirectionInRightWhenInstructionIsGiven(){
+        marsRover.doInstruction("R");
+
+        assertEquals("1 2 E",marsRover.getPosition());
+    }
+
+    @Test
+    public void shouldIncreasePositionInYPointWhenMoveInstructionIsGiven() {
+        marsRover.doInstruction("M");
+
+        assertEquals("1 3 N",marsRover.getPosition());
     }
 }
