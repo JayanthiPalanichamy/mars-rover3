@@ -1,12 +1,14 @@
+package com.thoughtworks.iwp;
+
 public class MarsRover {
     private Point coordinate;
     private Compass compass;
-    private final Point plateau;
+    private final Point plateauMaxPoint;
 
-    public MarsRover(Point coordinate, Compass compass, Point plateau) {
+    public MarsRover(Point coordinate, Compass compass, Point plateauMaxPoint) {
         this.coordinate = coordinate;
         this.compass = compass;
-        this.plateau = plateau;
+        this.plateauMaxPoint = plateauMaxPoint;
     }
 
     public String getPosition() {
@@ -34,7 +36,7 @@ public class MarsRover {
     }
 
     private boolean isWithinPlateau(Point temp) {
-        return plateau.isGreater(temp) && new Point(0, 0).isLesser(temp);
+        return plateauMaxPoint.isGreater(temp) && new Point(0, 0).isLesser(temp);
     }
 
     private Point increaseCoordinate() {
@@ -50,6 +52,4 @@ public class MarsRover {
         }
         return coordinate;
     }
-
-
 }

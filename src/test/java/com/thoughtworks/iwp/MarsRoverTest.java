@@ -1,18 +1,25 @@
+package com.thoughtworks.iwp;
+
+import com.thoughtworks.iwp.Compass;
+import com.thoughtworks.iwp.MarsRover;
+import com.thoughtworks.iwp.MovedOutOfPlateau;
+import com.thoughtworks.iwp.Point;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class MarsRoverTest {
-    Point plateau;
+    Point plateauMaxPoint;
     Point marsRoverInitial;
     MarsRover marsRover;
 
+
     @Before
     public void setUp() {
-        plateau = new Point(5, 5);
+        plateauMaxPoint = new Point(5, 5);
         marsRoverInitial = new Point(1, 2);
-        marsRover = new MarsRover(marsRoverInitial, Compass.N, plateau);
+        marsRover = new MarsRover(marsRoverInitial, Compass.N, plateauMaxPoint);
     }
 
     @Test
@@ -65,7 +72,7 @@ public class MarsRoverTest {
     @Test
     public void shouldMoveAndChangeDirectionOfMarsRoverWhenInstructionIsGiven() {
         Point initial = new Point(3, 3);
-        MarsRover marsRover2 = new MarsRover(initial, Compass.E, plateau);
+        MarsRover marsRover2 = new MarsRover(initial, Compass.E, plateauMaxPoint);
 
         marsRover2.doInstruction("MMRMMRMRRM");
 

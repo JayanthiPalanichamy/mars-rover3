@@ -1,3 +1,5 @@
+package com.thoughtworks.iwp;
+
 public class Point {
     private final int xPoint;
     private final int yPoint;
