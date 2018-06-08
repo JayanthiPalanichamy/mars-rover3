@@ -60,4 +60,11 @@ public class MarsRoverTest {
 
         assertEquals("1 1 S",marsRover.getPosition());
     }
+
+    @Test
+    public void shouldMoveAndChangeDirectionOfMarsRoverWhenInstructionIsGiven() {
+        marsRover.doInstruction("LMLMLMLMM");
+
+        assertEquals("1 3 N",marsRover.getPosition());
+    }
 }
